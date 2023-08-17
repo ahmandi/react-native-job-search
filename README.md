@@ -67,6 +67,8 @@ Contributions to the JobSearch App are welcome! If you'd like to contribute, ple
 4. Push to the branch: `git push origin feature/my-feature`
 5. Create a pull request.
 
-## License
+## Credits
 
-This project is licensed under the [MIT License](LICENSE).
+This project is built upon the foundation of the [Project React Native Jobs](https://github.com/adrianhajdin/project_react_native_jobs) repository created by [Adrian Hajdin](https://github.com/adrianhajdin). 
+
+Original Repository: [Project React Native Jobs](https://github.com/adrianhajdin/project_react_native_jobs)
