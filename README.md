@@ -17,6 +17,11 @@ Welcome to the JobSearch App, a mobile application built using React Native, Hoo
 
 The JobSearch App is designed to streamline the process of finding job opportunities by utilizing the JSearch API. With a user-friendly interface and intuitive features, this app aims to make job hunting easier and more efficient.
 
+<video controls width="300">
+  <source src="./video-example/preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Features
 
 - **Search**: Seamlessly search for job listings based on keywords and filters.
@@ -51,11 +56,7 @@ The JobSearch App utilizes the JSearch API to retrieve job listings. The API int
 1. Sign up for a RapidAPI account: [RapidAPI Signup](https://rapidapi.com/signup)
 2. Subscribe to the JSearch API: [JSearch API](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch)
 3. Retrieve your API key from RapidAPI.
-4. Create a `.env` file in the project directory and add your API key as follows:
-
-```
-RAPID_API_KEY=YOUR_API_KEY
-```
+4. Add your API key to the files `app/search/[id].js` and `hook/useFetch.js`.
 
 ## Contributing
 
