@@ -1,10 +1,13 @@
 {
-  "expo": {
-    "scheme": "acme",
-    "web": {
-      "bundler": "metro"
-    },
-    "name": "react-native-app",
-    "slug": "react-native-app"
-  }
+	"expo": {
+		"scheme": "acme",
+		"web": {
+			"bundler": "metro"
+		},
+		"name": "react-native-app",
+		"slug": "react-native-app",
+		"experiments": {
+			"typedRoutes": true
+		}
+	}
 }

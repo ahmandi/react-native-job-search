@@ -1,5 +1,5 @@
 import { Stack, useRouter, useSearchParams } from 'expo-router';
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
 	View,
 	Text,
@@ -22,12 +22,13 @@ import useFetch from '../../hook/useFetch';
 
 const tabs = ['About', 'Qualifications', 'Responsibilities'];
 
-const JobDetails = () => {
+const JobDetails: React.FC = () => {
 	const params = useSearchParams();
 	const router = useRouter();
+	const jobId = typeof params.id === 'string' ? params.id : '';
 
 	const { data, isLoading, error, refetch } = useFetch('job-details', {
-		job_id: params.id,
+		job_id: jobId,
 	});
 
 	const [activeTab, setActiveTab] = useState(tabs[0]);

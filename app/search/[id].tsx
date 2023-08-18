@@ -20,7 +20,7 @@ const JobSearch = () => {
 
 	const [searchResult, setSearchResult] = useState([]);
 	const [searchLoader, setSearchLoader] = useState(false);
-	const [searchError, setSearchError] = useState(null);
+	const [searchError, setSearchError] = useState<Error | null>(null);
 	const [page, setPage] = useState(1);
 
 	const handleSearch = async () => {
@@ -44,14 +44,14 @@ const JobSearch = () => {
 			const response = await axios.request(options);
 			setSearchResult(response.data.data);
 		} catch (error) {
-			setSearchError(error);
+			setSearchError(error as Error);
 			console.log(error);
 		} finally {
 			setSearchLoader(false);
 		}
 	};
 
-	const handlePagination = (direction) => {
+	const handlePagination = (direction: any) => {
 		if (direction === 'left' && page > 1) {
 			setPage(page - 1);
 			handleSearch();
@@ -84,13 +84,13 @@ const JobSearch = () => {
 
 			<FlatList
 				data={searchResult}
-				renderItem={({ item }) => (
+				renderItem={({ item }: any) => (
 					<NearbyJobCard
 						job={item}
 						handleNavigate={() => router.push(`/job-details/${item.job_id}`)}
 					/>
 				)}
-				keyExtractor={(item) => item.job_id}
+				keyExtractor={(item: any) => item.job_id}
 				contentContainerStyle={{ padding: SIZES.medium, rowGap: SIZES.medium }}
 				ListHeaderComponent={() => (
 					<>

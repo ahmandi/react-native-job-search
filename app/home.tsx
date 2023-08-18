@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
@@ -10,7 +10,7 @@ import {
 	Welcome,
 } from '../components';
 
-const Home = () => {
+const Home: React.FC = () => {
 	const router = useRouter();
 	const [searchTerm, setSearchTerm] = useState('');
 

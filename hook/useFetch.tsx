@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
-const useFetch = (endpoint, query) => {
-	const [data, setData] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState(null);
+interface QueryParams {
+	[key: string]: string | number;
+}
 
-	const options = {
+interface ApiResponse {
+	data: any[];
+}
+
+const useFetch = (endpoint: string, query: QueryParams) => {
+	const [data, setData] = useState<any[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<Error | null>(null);
+
+	const options: AxiosRequestConfig = {
 		method: 'GET',
 		url: `https://jsearch.p.rapidapi.com/${endpoint}`,
 		headers: {
@@ -20,12 +28,12 @@ const useFetch = (endpoint, query) => {
 		setIsLoading(true);
 
 		try {
-			const response = await axios.request(options);
+			const response = await axios.request<ApiResponse>(options);
 
 			setData(response.data.data);
 			setIsLoading(false);
 		} catch (error) {
-			setError(error);
+			setError(error as Error);
 			console.log(error);
 		} finally {
 			setIsLoading(false);
