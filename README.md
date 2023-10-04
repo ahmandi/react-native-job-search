@@ -18,7 +18,6 @@ Welcome to the JobSearch App, a mobile application built using React Native, Hoo
 The JobSearch App is designed to streamline the process of finding job opportunities by utilizing the JSearch API. With a user-friendly interface and intuitive features, this app aims to make job hunting easier and more efficient.
 
 <div align=center>
-(https://github.com/ahmandi/react-native-job-search/assets/93018313/032e462a-8546-480c-9463-a9074d7fdac3)
 
 https://github.com/ahmandi/react-native-job-search/assets/93018313/608b8a4f-3049-4a4b-9ef7-75c06968f84a
 </div>
